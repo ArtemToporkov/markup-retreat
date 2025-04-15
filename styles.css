@@ -1,1 +1,26 @@
 /* Пиши стили тут */
+.stars {
+    display: flex;
+    height: 100px;
+    white-space: nowrap;
+    gap: 0;
+}
+
+input {
+  visibility: hidden;
+}
+
+.stars .star {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-image: url('img/star-empty.svg');
+}
+
+.stars .star:has(~ input[type=radio]:checked) {
+  background-image: url('img/star.svg');
+}
+
+.stars .star:has(~ .star:hover), .star:hover {
+    background-image: url('img/star.svg');
+}
